@@ -1,0 +1,5 @@
+Types: deb deb-src
+URIs: http://repo.hades-os.org/
+Suites: haku
+Components: main
+Signed-By: /usr/share/keyrings/hades-archive-keyring.gpg

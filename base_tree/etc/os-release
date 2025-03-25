@@ -1,0 +1,7 @@
+PRETTY_NAME="Hades haku"
+NAME="Hades"
+VERSION_CODENAME=haku
+ID=hades
+HOME_URL="https://hades-os.org"
+SUPPORT_URL="https://hades-os.org/support"
+BUG_REPORT_URL="https://bugs.hades-os.org/"
