@@ -169,7 +169,7 @@ static void init_exit(int status) {
 }
 
 static void launch_shell() {
-	print(LOG_LAUNCH, "Running shell ...\n\n");
+	print(LOG_LAUNCH, "Running login ...\n\n");
 	pid_t pid;
 	BUG_ON_FAILURE((pid = fork()), "fork() failure");
 
@@ -179,11 +179,6 @@ static void launch_shell() {
 			close(i);
 		}
 
-		setsid();
-
-        setuid(1000);
-        setgid(1000);
-
 		int stdin = open("/dev/tty0", O_RDONLY);
 		int stdout = open("/dev/tty0", O_WRONLY);
 		int stderr = open("/dev/tty0", O_WRONLY);
@@ -192,7 +187,7 @@ static void launch_shell() {
 			_exit(-1);
 		}
 
-		execl("/usr/bin/bash", "bash", "-l", "-i", NULL);
+		execl("/usr/bin/login", "login", NULL);
 		_exit(-1);
 	}
 }
