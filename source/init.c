@@ -169,7 +169,7 @@ static void init_exit(int status) {
 }
 
 static void launch_shell() {
-	print(LOG_LAUNCH, "Running agetty ...\n\n");
+	print(LOG_LAUNCH, "Running mingetty ...\n\n");
 	pid_t pid;
 	BUG_ON_FAILURE((pid = fork()), "fork() failure");
 
