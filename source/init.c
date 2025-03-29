@@ -187,7 +187,7 @@ static void launch_shell() {
 			_exit(-1);
 		}
 
-		execl("/sbin/agetty", "--noclear", "tty1", "9600", NULL);
+		execl("/usr/sbin/mingetty", "--noclear", "tty1", NULL);
 		_exit(-1);
 	}
 }
