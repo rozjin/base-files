@@ -169,7 +169,7 @@ static void init_exit(int status) {
 }
 
 static void launch_shell() {
-	print(LOG_LAUNCH, "Running login ...\n\n");
+	print(LOG_LAUNCH, "Running agetty ...\n\n");
 	pid_t pid;
 	BUG_ON_FAILURE((pid = fork()), "fork() failure");
 
@@ -187,7 +187,7 @@ static void launch_shell() {
 			_exit(-1);
 		}
 
-		execl("/usr/bin/login", "login", NULL);
+		execl("/sbin/agetty", "--noclear", "tty1", "9600", NULL);
 		_exit(-1);
 	}
 }
